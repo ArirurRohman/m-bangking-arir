@@ -85,3 +85,64 @@ class HomePage extends StatelessWidget {
                                 BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 10, spreadRadius: 2)
                               ],
                             ),
+                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text("Rekening 123-456-XXX", style: TextStyle(color: Colors.grey)),
+                                    SizedBox(height: 5),
+                                    Text("IDR 100,000,000", 
+                                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                  ],
+                                ),
+                                const Icon(Icons.visibility_outlined, color: Colors.grey),
+                              ],
+                            ),
+                          ),
+                          
+                          const SizedBox(height: 25),
+                          
+                          // Grid Menu (Transfer, Deposito, dll)
+                          GridView.count(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 20,
+                            children: [
+                              _buildMenuIcon(Icons.swap_horiz, "Transfer"),
+                              _buildMenuIcon(Icons.savings, "Deposito"),
+                              _buildMenuIcon(Icons.trending_up, "Welma"),
+                              _buildMenuIcon(Icons.calendar_month, "Transaksi\nTerjadwal"),
+                              _buildMenuIcon(Icons.description, "e-Statement"),
+                              _buildMenuIcon(Icons.account_balance_wallet, "Kredit\nKonsumen"),
+                              _buildMenuIcon(Icons.credit_card, "Flazz"),
+                              _buildMenuIcon(Icons.phonelink_ring, "Cardless"),
+                            ],
+                          ),
+                          
+                          const SizedBox(height: 25),
+                          _buildSectionTitle("BAYAR & ISI ULANG"),
+                          const SizedBox(height: 15),
+                          
+                          // Row untuk Bayar & Isi Ulang
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              _buildCircularMenu(Icons.stay_primary_portrait, "Paket Data"),
+                              _buildCircularMenu(Icons.health_and_safety, "BPJS"),
+                              _buildCircularMenu(Icons.water_drop, "Air"),
+                              _buildCircularMenu(Icons.shield, "Asuransi"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
